@@ -3,7 +3,7 @@ from flask import request
 from waitress import serve
 
 app = Flask(__name__)
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET'])
 def main():
 	cmd = request.args
 	return cmd
