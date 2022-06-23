@@ -5,6 +5,7 @@ from waitress import serve
 app = Flask(__name__)
 @app.route('/')
 def main():
-	cmd = request.form.get("cmd")
+	cmd = request.form
+	print(cmd['cmd'])
 	return cmd
 serve(app, port=8081, host='0.0.0.0')
