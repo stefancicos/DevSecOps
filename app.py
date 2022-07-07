@@ -18,7 +18,7 @@ def main(cmd):
 def pyevalinj(cmd):
 	return str(eval(cmd))
 
-@app.route('<text>')
+@app.route('/<text>')
 def xss(text):
 	return "Hello "+text
 
