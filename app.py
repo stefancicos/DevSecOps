@@ -10,6 +10,10 @@ app = Flask(__name__)
 def run_cmd(cmd):
 	return subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE).stdout.read()
 
+@app.route('/')
+def main():
+	return "Bet ya can't break me!"
+
 @app.route('/cmdinj/<cmd>')
 def main(cmd):
 	return run_cmd(cmd)
