@@ -22,4 +22,8 @@ def pyevalinj(cmd):
 def xss(text):
 	return "Hello "+text
 
+@app.route('/sql/<cmd>')
+def sqli(cmd):
+	query = "DELETE FROM foo WHERE id = '%s'" % cmd
+	return "No sqli here :)"
 serve(app, port=8081, host='192.168.201.204')
