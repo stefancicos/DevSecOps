@@ -10,10 +10,6 @@ app = Flask(__name__)
 def run_cmd(cmd):
 	return subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE).stdout.read()
 
-@app.route('/')
-def main():
-	return "Bet ya can't break me!"
-
 @app.route('/cmdinj/<cmd>')
 def main(cmd):
 	return run_cmd(cmd)
@@ -24,7 +20,10 @@ def pyevalinj(cmd):
 
 @app.route('/<text>')
 def xss(text):
-	return "Hello "+text
+	if text != null:
+		return "Nice try, " + text
+	else:
+		return "Bet ya can't break me!"
 
 @app.route('/sql/<cmd>')
 def sqli(cmd):
