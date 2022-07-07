@@ -2,3 +2,4 @@ waitress
 flask
 websockets==4.0.1
 safety
+safety-cli
