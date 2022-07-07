@@ -11,10 +11,14 @@ def run_cmd(cmd):
 
 @app.route('/cmdinj/<cmd>')
 def main(cmd):
-	number = 9
-	return str(run_cmd(cmd))+"<hr>"+str(exec("number*number"))+"<hr>"+str(eval("number + number"))
+	return run_cmd(cmd)
 
-@app.route('/pyinj/<cmd>')
-def pyinf(cmd):
+@app.route('/pyexecinj/<cmd>')
+def pyexecinj(cmd):
+	return str(exec(cmd))
 
-serve(app, port=8081, host='0.0.0.0')
+@app.route('/pyevalinj/<cmd>')
+def pyevalinj(cmd):
+	return str(eval(cmd))
+
+serve(app, port=8081, host='192.168.201.204')
