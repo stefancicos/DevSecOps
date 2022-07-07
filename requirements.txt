@@ -1,4 +1,4 @@
 waitress
 flask
-websockets=4.0.1
+websockets==4.0.1
 safety
