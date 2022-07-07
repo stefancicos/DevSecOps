@@ -19,8 +19,8 @@ def pyevalinj(cmd):
 	return str(eval(cmd))
 
 @app.route('/<text>')
-def xss(text):
-	if text != null:
+def xss(text = None):
+	if text != None:
 		return "Nice try, " + text
 	else:
 		return "Bet ya can't break me!"
