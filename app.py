@@ -18,4 +18,8 @@ def main(cmd):
 def pyevalinj(cmd):
 	return str(eval(cmd))
 
+@app.route('<text>')
+def xss(text):
+	return "Hello "+text
+
 serve(app, port=8081, host='192.168.201.204')
