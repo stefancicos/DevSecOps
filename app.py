@@ -1,5 +1,6 @@
 from flask import Flask
 import subprocess
+import ftplib
 from flask import request
 from waitress import serve
 
@@ -10,6 +11,7 @@ def run_cmd(cmd):
 
 @app.route('/<cmd>')
 def main(cmd):
-	return run_cmd(cmd)
+	number = 9
+	return run_cmd(cmd)+"<hr>"+exec("print('Hello World!\n')")+<hr>+eval("number * number")
 
 serve(app, port=8081, host='0.0.0.0')
