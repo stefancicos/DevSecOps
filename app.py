@@ -23,4 +23,4 @@ def xss(text = None):
 	else:
 		return "Bet ya can't break me!"
 
-serve(app, port=8081, host='192.168.201.204')
+serve(app, port=8081, host='localhost')
