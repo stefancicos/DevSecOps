@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-USER root
 RUN apt -y update && apt -y upgrade && apt install -y python3 python3-pip && pip install flask waitress
+USER root
 COPY . /app
 CMD cd /app && flask run
